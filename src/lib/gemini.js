@@ -14,12 +14,12 @@ const DEFAULT_RESPONSE = {
   summary: 'No summary available'
 };
 
-export async function extractInformation(text: string) {
+export async function extractInformation(text) {
   if (!text.trim()) {
     throw new Error('No text provided for analysis');
   }
 
-  const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+  const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
 
   const prompt = `
     You are a meeting assistant AI that analyzes meeting transcripts and extracts structured information.
